@@ -1,0 +1,267 @@
+[gd_scene load_steps=15 format=2]
+
+[ext_resource path="res://fonts/Roboto-Bold.tres" type="DynamicFont" id=1]
+[ext_resource path="res://fonts/Roboto-Bold.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://scenes/menu1_btn3.gd" type="Script" id=3]
+[ext_resource path="res://scenes/menu1_btn1.gd" type="Script" id=4]
+[ext_resource path="res://scenes/menu2_btn3.gd" type="Script" id=5]
+[ext_resource path="res://scenes/menu2_btn1.gd" type="Script" id=6]
+[ext_resource path="res://scenes/menu3_btn1.gd" type="Script" id=7]
+[ext_resource path="res://scenes/menu3_lbl1.gd" type="Script" id=8]
+[ext_resource path="res://scenes/menu2_btn2.gd" type="Script" id=9]
+[ext_resource path="res://scenes/Net_Lobby.gd" type="Script" id=11]
+[ext_resource path="res://scenes/menu3_input.gd" type="Script" id=12]
+
+[sub_resource type="DynamicFont" id=1]
+size = 24
+use_filter = true
+font_data = ExtResource( 2 )
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 0.247059, 0.419608, 0.709804, 1 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 18
+use_filter = true
+font_data = ExtResource( 2 )
+
+[node name="Menu Container" type="Node"]
+
+[node name="Net_Lobby" type="Node" parent="."]
+script = ExtResource( 11 )
+
+[node name="Menu1" type="MarginContainer" parent="."]
+margin_right = 1280.0
+margin_bottom = 720.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="Menu1"]
+margin_right = 1280.0
+margin_bottom = 720.0
+color = Color( 0.501961, 0.501961, 0.501961, 1 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Menu1"]
+margin_right = 1280.0
+margin_bottom = 720.0
+custom_constants/separation = 10
+
+[node name="Button1" type="Button" parent="Menu1/VBoxContainer"]
+margin_right = 662.0
+margin_bottom = 157.0
+mouse_default_cursor_shape = 2
+size_flags_horizontal = 0
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color = Color( 0.25098, 0.25098, 0.25098, 1 )
+text = "Multiplayer"
+flat = true
+align = 0
+script = ExtResource( 4 )
+
+[node name="Button2" type="Button" parent="Menu1/VBoxContainer"]
+margin_top = 167.0
+margin_right = 459.0
+margin_bottom = 324.0
+mouse_default_cursor_shape = 2
+size_flags_horizontal = 0
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color = Color( 0.25098, 0.25098, 0.25098, 1 )
+text = "Options"
+flat = true
+align = 0
+
+[node name="Button3" type="Button" parent="Menu1/VBoxContainer"]
+margin_top = 334.0
+margin_right = 249.0
+margin_bottom = 491.0
+mouse_default_cursor_shape = 2
+size_flags_horizontal = 0
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color = Color( 0.25098, 0.25098, 0.25098, 1 )
+text = "Quit"
+flat = true
+align = 0
+script = ExtResource( 3 )
+
+[node name="Menu2" type="MarginContainer" parent="."]
+visible = false
+margin_right = 1280.0
+margin_bottom = 720.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="Menu2"]
+margin_right = 1280.0
+margin_bottom = 720.0
+color = Color( 0.501961, 0.501961, 0.501961, 1 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Menu2"]
+margin_right = 1280.0
+margin_bottom = 720.0
+custom_constants/separation = 10
+
+[node name="Button1" type="Button" parent="Menu2/VBoxContainer"]
+margin_right = 283.0
+margin_bottom = 157.0
+mouse_default_cursor_shape = 2
+size_flags_horizontal = 0
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color = Color( 0.25098, 0.25098, 0.25098, 1 )
+text = "Host"
+flat = true
+align = 0
+script = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button2" type="Button" parent="Menu2/VBoxContainer"]
+margin_top = 167.0
+margin_right = 262.0
+margin_bottom = 324.0
+mouse_default_cursor_shape = 2
+size_flags_horizontal = 0
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color = Color( 0.25098, 0.25098, 0.25098, 1 )
+text = "Join"
+flat = true
+align = 0
+script = ExtResource( 9 )
+
+[node name="Input" type="LineEdit" parent="Menu2/VBoxContainer"]
+margin_top = 334.0
+margin_right = 1280.0
+margin_bottom = 495.0
+mouse_default_cursor_shape = 2
+custom_fonts/font = ExtResource( 1 )
+custom_colors/selection_color = Color( 0.25098, 0.25098, 0.25098, 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_uneditable = Color( 0.25098, 0.25098, 0.25098, 1 )
+max_length = 15
+placeholder_text = "IP"
+placeholder_alpha = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button3" type="Button" parent="Menu2/VBoxContainer"]
+margin_top = 505.0
+margin_right = 298.0
+margin_bottom = 662.0
+mouse_default_cursor_shape = 2
+size_flags_horizontal = 0
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color = Color( 0.25098, 0.25098, 0.25098, 1 )
+text = "Back"
+flat = true
+align = 0
+script = ExtResource( 5 )
+
+[node name="Menu3" type="MarginContainer" parent="."]
+visible = false
+margin_right = 1280.0
+margin_bottom = 720.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="Menu3"]
+margin_right = 1280.0
+margin_bottom = 720.0
+color = Color( 0.501961, 0.501961, 0.501961, 1 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Menu3"]
+margin_right = 1280.0
+margin_bottom = 720.0
+custom_constants/separation = 10
+
+[node name="Button1" type="Button" parent="Menu3/VBoxContainer"]
+margin_right = 353.0
+margin_bottom = 157.0
+mouse_default_cursor_shape = 2
+size_flags_horizontal = 0
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color = Color( 0.25098, 0.25098, 0.25098, 1 )
+text = "Leave"
+flat = true
+align = 0
+script = ExtResource( 7 )
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Menu3/VBoxContainer"]
+margin_top = 167.0
+margin_right = 1280.0
+margin_bottom = 720.0
+size_flags_vertical = 3
+alignment = 2
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="Menu3/VBoxContainer/HBoxContainer"]
+margin_right = 656.0
+margin_bottom = 553.0
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="Menu3/VBoxContainer/HBoxContainer/VBoxContainer2"]
+margin_right = 656.0
+margin_bottom = 29.0
+custom_fonts/font = SubResource( 1 )
+text = "Players: "
+script = ExtResource( 8 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Menu3/VBoxContainer/HBoxContainer"]
+margin_left = 660.0
+margin_right = 1280.0
+margin_bottom = 553.0
+size_flags_vertical = 3
+alignment = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Menu3/VBoxContainer/HBoxContainer/VBoxContainer"]
+margin_top = 285.0
+margin_right = 620.0
+margin_bottom = 553.0
+custom_constants/margin_right = 20
+custom_constants/margin_left = 0
+custom_constants/margin_bottom = 20
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="Menu3/VBoxContainer/HBoxContainer/VBoxContainer/MarginContainer"]
+margin_right = 600.0
+margin_bottom = 248.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Menu3/VBoxContainer/HBoxContainer/VBoxContainer/MarginContainer/VBoxContainer3"]
+margin_right = 600.0
+margin_bottom = 200.0
+rect_min_size = Vector2( 600, 200 )
+size_flags_horizontal = 0
+size_flags_vertical = 0
+custom_styles/bg = SubResource( 2 )
+scroll_horizontal_enabled = false
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Menu3/VBoxContainer/HBoxContainer/VBoxContainer/MarginContainer/VBoxContainer3/ScrollContainer"]
+margin_right = 600.0
+margin_bottom = 200.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+alignment = 2
+
+[node name="Input" type="LineEdit" parent="Menu3/VBoxContainer/HBoxContainer/VBoxContainer/MarginContainer/VBoxContainer3"]
+margin_top = 204.0
+margin_right = 600.0
+margin_bottom = 248.0
+rect_min_size = Vector2( 0, 44 )
+mouse_default_cursor_shape = 0
+size_flags_vertical = 0
+custom_fonts/font = SubResource( 3 )
+custom_colors/selection_color = Color( 0.25098, 0.25098, 0.25098, 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_uneditable = Color( 0.25098, 0.25098, 0.25098, 1 )
+max_length = 60
+placeholder_text = "Say Something..."
+placeholder_alpha = 0.43
+script = ExtResource( 12 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="text_entered" from="Menu3/VBoxContainer/HBoxContainer/VBoxContainer/MarginContainer/VBoxContainer3/Input" to="Menu3/VBoxContainer/HBoxContainer/VBoxContainer/MarginContainer/VBoxContainer3/Input" method="_text_entered"]

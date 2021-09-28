@@ -1,0 +1,6 @@
+extends Button
+
+
+func _pressed():
+	get_node("/root/Menu Container/Menu1").hide()
+	get_node("/root/Menu Container/Menu2").show()
